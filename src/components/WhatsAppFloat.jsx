@@ -41,7 +41,7 @@ export default function WhatsAppFloat() {
             <span className="absolute inset-0 animate-ping rounded-full bg-accent opacity-20" />
             <svg
               viewBox="0 0 24 24"
-              fill="#ffffff"
+              fill="var(--color-line)"
               className="relative h-7 w-7"
               aria-hidden="true"
             >

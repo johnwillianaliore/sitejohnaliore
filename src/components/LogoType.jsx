@@ -51,12 +51,19 @@ export default function LogoType() {
   }, [])
 
   return (
-    <span className="font-mono text-lg font-medium whitespace-nowrap md:text-xl">
-      <span className="text-accent">{'<['}</span>
-      <span className={text === '-' ? 'animate-cursor text-white' : 'text-white'}>
-        {text}
+    // Marca oficial: colchetes em Inter ExtraBold verdes, nome em Inter Light,
+    // hífen verde (John Aliore - Logotipo.pdf)
+    <span className="font-body text-xl whitespace-nowrap md:text-2xl">
+      <span className="font-extrabold text-accent">{'<['}</span>
+      <span className={`font-light text-white ${text === '-' ? 'animate-cursor' : ''}`}>
+        {text.split('-').map((part, i) => (
+          <span key={i}>
+            {i > 0 && <span className="font-extrabold text-accent">-</span>}
+            {part}
+          </span>
+        ))}
       </span>
-      <span className="text-accent">{']>'}</span>
+      <span className="font-extrabold text-accent">{']>'}</span>
     </span>
   )
 }
